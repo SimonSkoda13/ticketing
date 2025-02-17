@@ -23,3 +23,11 @@ build:
         manual:
           - src: "src/**/*.tsx "
             dest: .
+    - image: simonskoda1354/tickets
+      context: tickets
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: "src/**/*.ts"
+            dest: .
