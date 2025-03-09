@@ -19,7 +19,6 @@ router.post(
   validateRequest,
   async (req: Request, res: Response) => {
     const { email, password } = req.body;
-    console.log("email", email);
 
     const existingUser = await User.findOne({
       email,
@@ -34,7 +33,6 @@ router.post(
 
     const user = User.build({ email, password });
     await user.save();
-    console.log("process.env.JWT_KEY", user.id);
 
     const userJwt = jwt.sign(
       {

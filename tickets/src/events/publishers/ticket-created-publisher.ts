@@ -1,4 +1,4 @@
-import { Publisher, Subjects, TicketCreatedEvent } from '@rallycoding/common';
+import { Publisher, Subjects, TicketCreatedEvent } from "@tickets-com/common";
 
 export class TicketCreatedPublisher extends Publisher<TicketCreatedEvent> {
   readonly subject = Subjects.TicketCreated;

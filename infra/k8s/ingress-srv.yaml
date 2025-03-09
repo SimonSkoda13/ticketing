@@ -10,15 +10,29 @@ spec:
     - host: tickets.dev
       http:
         paths:
-          - pathType: ImplementationSpecific
-            path: /api/users/?(.*)
+          - path: /api/users/?(.*)
+            pathType: ImplementationSpecific
             backend:
               service:
                 name: auth-srv
                 port:
                   number: 3000
-          - pathType: ImplementationSpecific
-            path: /?(.*)
+          - path: /api/tickets/?(.*)
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: tickets-srv
+                port:
+                  number: 3000
+          - path: /api/orders/?(.*)
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: orders-srv
+                port:
+                  number: 3000
+          - path: /?(.*)
+            pathType: ImplementationSpecific
             backend:
               service:
                 name: client-srv
