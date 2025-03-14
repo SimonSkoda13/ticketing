@@ -7,18 +7,24 @@ import mongoose from "mongoose";
 it("fetches orders for a particular user", async () => {
   // Create three tickets
   const ticket1 = Ticket.build({
+    id: new mongoose.Types.ObjectId().toHexString(),
+
     title: "concert",
     price: 20,
   });
   await ticket1.save();
 
   const ticket2 = Ticket.build({
+    id: new mongoose.Types.ObjectId().toHexString(),
+
     title: "concert",
     price: 20,
   });
   await ticket2.save();
 
   const ticket3 = Ticket.build({
+    id: new mongoose.Types.ObjectId().toHexString(),
+
     title: "concert",
     price: 20,
   });

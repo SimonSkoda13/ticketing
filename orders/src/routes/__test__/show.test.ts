@@ -6,6 +6,7 @@ import mongoose from "mongoose";
 
 it("Fetches the order", async () => {
   const ticket = Ticket.build({
+    id: new mongoose.Types.ObjectId().toHexString(),
     title: "concert",
     price: 20,
   });
@@ -40,6 +41,7 @@ it("Returns an error if the order does not exist", async () => {
 
 it("Can fetch only owner", async () => {
   const ticket1 = Ticket.build({
+    id: new mongoose.Types.ObjectId().toHexString(),
     title: "concert",
     price: 20,
   });
